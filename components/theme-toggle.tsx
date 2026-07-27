@@ -10,20 +10,24 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "dark";
-    return window.localStorage.getItem("zenetic-theme") === "light" ? "light" : "dark";
-  });
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
+    const saved =
+      window.localStorage.getItem("zenetic-theme") === "light"
+        ? "light"
+        : "dark";
+
+    setTheme(saved);
+    applyTheme(saved);
+  }, []);
 
   const toggleTheme = () => {
-    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    window.localStorage.setItem("zenetic-theme", nextTheme);
-    applyTheme(nextTheme);
+    const next = theme === "dark" ? "light" : "dark";
+
+    setTheme(next);
+    localStorage.setItem("zenetic-theme", next);
+    applyTheme(next);
   };
 
   const isLight = theme === "light";

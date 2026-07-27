@@ -56,7 +56,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-2xl ml-20">
+      <div className="relative z-10 max-w-2xl ">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
