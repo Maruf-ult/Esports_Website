@@ -5,12 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-arena-bg: #0e0f13;
-  --color-arena-surface: #141519;
-  --color-arena-border: #23242b;
-  --color-arena-accent: #e8ff3c;
-  --color-arena-muted: #8b8fa3;
-  --color-arena-fg: #f4f4f2;
+  --color-arena-bg: var(--arena-bg);
+  --color-arena-surface: var(--arena-surface);
+  --color-arena-border: var(--arena-border);
+  --color-arena-accent: var(--arena-accent);
+  --color-arena-muted: var(--arena-muted);
+  --color-arena-fg: var(--arena-fg);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -18,9 +18,27 @@
 }
 
 body {
-  background: var(--color-arena-bg);
-  color: var(--color-arena-fg);
+  background: var(--arena-bg);
+  color: var(--arena-fg);
   font-family: var(--font-body);
+}
+
+:root {
+  --arena-bg: #0e0f13;
+  --arena-surface: #141519;
+  --arena-border: #23242b;
+  --arena-accent: #e8ff3c;
+  --arena-muted: #8b8fa3;
+  --arena-fg: #f4f4f2;
+}
+
+html.light {
+  --arena-bg: #f7f8fa;
+  --arena-surface: #ffffff;
+  --arena-border: #d8dce3;
+  --arena-accent: #8da909;
+  --arena-muted: #596171;
+  --arena-fg: #15171c;
 }
 html {
   scroll-behavior: smooth;

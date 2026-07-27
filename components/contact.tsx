@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Reveal } from "@/components/reveal";
+import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -34,56 +36,117 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="scroll-mt-24 px-6 md:px-12 py-24">
-      <div className="font-mono text-xs text-arena-accent mb-4">
-        GET IN TOUCH
-      </div>
-      <h2 className="font-display text-3xl md:text-5xl mb-10 max-w-lg leading-tight">
-        LET&apos;S BUILD
-        <br />
-        SOMETHING <span className="text-arena-accent">LIVE.</span>
-      </h2>
+    <section id="contact" className="scroll-mt-24 px-6 md:px-12 py-16 flex justify-center">
+      <div className="w-full max-w-4xl">
+        <Reveal>
+          <div className="text-center mb-12 flex flex-col items-center">
+            <div className="font-mono text-[10px] text-arena-muted tracking-[0.24em] mb-3">
+              START A CONVERSATION
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight flex items-center justify-center gap-2.5">
+              <span className="text-arena-fg relative pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-arena-accent">
+                GET IN
+              </span>
+              <span className="text-arena-accent">TOUCH</span>
+            </h2>
+          </div>
+        </Reveal>
 
-      {status === "sent" ? (
-        <p className="font-mono text-sm text-arena-accent">
-          MESSAGE SENT — WE&apos;LL BE IN TOUCH.
-        </p>
-      ) : (
-        <form onSubmit={handleSubmit} className="max-w-md space-y-4">
-          <Input
-            name="name"
-            placeholder="Name"
-            required
-            className="bg-arena-surface border-arena-border text-arena-fg placeholder:text-arena-muted"
-          />
-          <Input
-            name="email"
-            type="email"
-            placeholder="Email Address"
-            required
-            className="bg-arena-surface border-arena-border text-arena-fg placeholder:text-arena-muted"
-          />
-          <Textarea
-            name="message"
-            placeholder="Message"
-            required
-            rows={4}
-            className="bg-arena-surface border-arena-border text-arena-fg placeholder:text-arena-muted"
-          />
-          <Button
-            type="submit"
-            disabled={status === "sending"}
-            className="bg-arena-accent text-arena-bg hover:bg-arena-accent/90 font-mono text-xs disabled:opacity-50"
-          >
-            {status === "sending" ? "SENDING..." : "SEND"}
-          </Button>
-          {status === "error" && (
-            <p className="font-mono text-xs text-red-400">
-              SOMETHING WENT WRONG — TRY AGAIN.
-            </p>
-          )}
-        </form>
-      )}
+        <Reveal delay={0.08}>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-arena-border border border-arena-border">
+            <div className="md:col-span-5 bg-arena-bg p-8 md:p-10 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-arena-accent origin-top-left scale-0 group-hover:scale-100 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
+              <div className="relative z-10">
+                <div className="space-y-3">
+                  <div className="font-mono text-xs text-arena-accent tracking-widest uppercase">
+                    ZENETIC ESPORTS
+                  </div>
+                  <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-arena-fg leading-[1.05] tracking-tight">
+                    LET&apos;S BUILD<br />
+                    <span className="text-arena-accent group-hover:text-arena-bg transition-colors duration-300">SOMETHING</span><br />
+                    <span className="text-arena-accent group-hover:text-arena-bg transition-colors duration-300">LIVE.</span>
+                  </h2>
+                  <p className="mt-5 text-sm text-arena-muted leading-relaxed max-w-xs group-hover:text-arena-bg/70 transition-colors duration-300">
+                    Bring us your next event, campaign, broadcast, or bold idea.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-7 bg-arena-surface p-8 md:p-10">
+                {status === "sent" ? (
+                  <div className="py-8 text-center flex flex-col items-center justify-center">
+                    <CheckCircle2 className="w-10 h-10 text-arena-accent mb-2 animate-bounce" />
+                    <h3 className="font-display text-lg text-arena-fg mb-1">MESSAGE SENT</h3>
+                    <p className="font-mono text-xs text-arena-muted">
+                      WE&apos;LL BE IN TOUCH WITH YOU SHORTLY.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                        Name
+                      </label>
+                      <Input
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                        className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                        Email Address
+                      </label>
+                      <Input
+                        name="email"
+                        type="email"
+                        placeholder="Email Address"
+                        required
+                        className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                        Message
+                      </label>
+                      <Textarea
+                        name="message"
+                        placeholder="Enter your message"
+                        required
+                        rows={4}
+                        className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm text-xs p-3.5 resize-none"
+                      />
+                    </div>
+
+                    {/* Bottom Right Send Button matching screenshot position */}
+                    <div className="flex items-center justify-between pt-1">
+                      {status === "error" ? (
+                        <div className="flex items-center gap-1.5 font-mono text-xs text-red-400">
+                          <AlertCircle className="w-4 h-4" />
+                          <span>SOMETHING WENT WRONG.</span>
+                        </div>
+                      ) : <div />}
+
+                      <Button
+                        type="submit"
+                        disabled={status === "sending"}
+                        className="bg-arena-accent text-arena-bg hover:bg-white font-mono font-bold text-xs tracking-wider uppercase h-10 px-6 rounded-sm transition-all duration-300 flex items-center gap-2"
+                      >
+                        <span>{status === "sending" ? "SENDING..." : "SEND"}</span>
+                        <Send className="w-3.5 h-3.5" />
+                      </Button>
+                    </div>
+                  </form>
+                )}
+              </div>
+
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }
