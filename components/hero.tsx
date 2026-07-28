@@ -9,7 +9,7 @@ const images = [
   { id: "valorant", src: "/images/valorant.jpg", alt: "Valorant" },
   { id: "pubg", src: "/images/pubj.jpg", alt: "PUBG Mobile" },
   { id: "freefire", src: "/images/free_fire.jpeg", alt: "Free Fire" },
-  { id: "mlbb", src: "/images/mlbb.jpg", alt: "MLBB" },
+  { id: "mlbb", src: "/images/mlbbnew.jpg", alt: "MLBB" },
 ];
 
 export function Hero() {
@@ -46,18 +46,18 @@ export function Hero() {
               fill
               priority
               quality={85}
-              className="object-cover object-center brightness-[0.55]"
+              className="object-cover object-center lg:object-[center_20%] hero-img-brightness"
             />
           </motion.div>
         </AnimatePresence>
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-arena-bg via-arena-bg/50 to-transparent z-[1]" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-arena-bg/90 via-arena-bg/60 to-transparent" />
+        <div className="absolute inset-0 hero-overlay-bottom z-[1]" />
+        <div className="absolute inset-0 hero-overlay-left z-[1]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-2xl ">
+      <div className="relative z-10 max-w-2xl hero-text">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export function Hero() {
       </div>
 
       {/* Slide indicators */}
-      <div className="absolute bottom-6 left-6 md:left-12 z-10 flex gap-2">
+      <div className="absolute bottom-6 left-6 md:left-12 z-10 flex gap-2 hero-text">
         {images.map((_, i) => (
           <button
             key={i}

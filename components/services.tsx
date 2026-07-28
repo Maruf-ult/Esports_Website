@@ -39,10 +39,10 @@ export function Services() {
         </div>
       </Reveal>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-arena-border">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-px bg-transparent sm:bg-arena-border">
         {services.map((s, i) => (
           <Reveal key={s.tag} delay={i * 0.08}>
-            <div className="service-card bg-arena-bg p-8 h-full relative overflow-hidden group cursor-default">
+            <div className="service-card bg-arena-surface sm:bg-arena-bg p-8 h-full relative overflow-hidden group cursor-default rounded-lg border border-arena-border sm:rounded-none sm:border-0">
               <div className="absolute inset-0 bg-arena-accent origin-top-left scale-0 group-hover:scale-100 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-0" />
 
               {/* Content */}
