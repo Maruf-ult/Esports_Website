@@ -58,8 +58,8 @@ export function Contact() {
               <div className="absolute inset-0 bg-arena-accent origin-top-left scale-0 group-hover:scale-100 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
               <div className="relative z-10">
                 <div className="space-y-3">
-                  <div className="font-mono text-xs text-arena-accent tracking-widest uppercase">
-                    ZENETIC ESPORTS
+                  <div className="mb-4 flex items-center">
+                    <div className="logo-mask bg-purple-900 hover:bg-purple-700 transition-colors duration-300 h-13 w-20" aria-label="Logo" />
                   </div>
                   <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-arena-fg leading-[1.05] tracking-tight">
                     LET&apos;S BUILD<br />
@@ -74,75 +74,75 @@ export function Contact() {
             </div>
 
             <div className="md:col-span-7 bg-arena-surface p-8 md:p-10">
-                {status === "sent" ? (
-                  <div className="py-8 text-center flex flex-col items-center justify-center">
-                    <CheckCircle2 className="w-10 h-10 text-arena-accent mb-2 animate-bounce" />
-                    <h3 className="font-display text-lg text-arena-fg mb-1">MESSAGE SENT</h3>
-                    <p className="font-mono text-xs text-arena-muted">
-                      WE&apos;LL BE IN TOUCH WITH YOU SHORTLY.
-                    </p>
+              {status === "sent" ? (
+                <div className="py-8 text-center flex flex-col items-center justify-center">
+                  <CheckCircle2 className="w-10 h-10 text-arena-accent mb-2 animate-bounce" />
+                  <h3 className="font-display text-lg text-arena-fg mb-1">MESSAGE SENT</h3>
+                  <p className="font-mono text-xs text-arena-muted">
+                    WE&apos;LL BE IN TOUCH WITH YOU SHORTLY.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                      Name
+                    </label>
+                    <Input
+                      name="name"
+                      placeholder="Your Name"
+                      required
+                      className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
+                    />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
-                        Name
-                      </label>
-                      <Input
-                        name="name"
-                        placeholder="Your Name"
-                        required
-                        className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
-                      />
-                    </div>
 
-                    <div>
-                      <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
-                        Email Address
-                      </label>
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="Email Address"
-                        required
-                        className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
-                      />
-                    </div>
+                  <div>
+                    <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                      Email Address
+                    </label>
+                    <Input
+                      name="email"
+                      type="email"
+                      placeholder="Email Address"
+                      required
+                      className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
+                    />
+                  </div>
 
-                    <div>
-                      <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
-                        Message
-                      </label>
-                      <Textarea
-                        name="message"
-                        placeholder="Enter your message"
-                        required
-                        rows={4}
-                        className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm text-xs p-3.5 resize-none"
-                      />
-                    </div>
+                  <div>
+                    <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                      Message
+                    </label>
+                    <Textarea
+                      name="message"
+                      placeholder="Enter your message"
+                      required
+                      rows={4}
+                      className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm text-xs p-3.5 resize-none"
+                    />
+                  </div>
 
-                    {/* Bottom Right Send Button matching screenshot position */}
-                    <div className="flex items-center justify-between pt-1">
-                      {status === "error" ? (
-                        <div className="flex items-center gap-1.5 font-mono text-xs text-red-400">
-                          <AlertCircle className="w-4 h-4" />
-                          <span>SOMETHING WENT WRONG.</span>
-                        </div>
-                      ) : <div />}
+                  {/* Bottom Right Send Button matching screenshot position */}
+                  <div className="flex items-center justify-between pt-1">
+                    {status === "error" ? (
+                      <div className="flex items-center gap-1.5 font-mono text-xs text-red-400">
+                        <AlertCircle className="w-4 h-4" />
+                        <span>SOMETHING WENT WRONG.</span>
+                      </div>
+                    ) : <div />}
 
-                      <Button
-                        type="submit"
-                        disabled={status === "sending"}
-                        className="bg-arena-accent text-arena-bg hover:bg-white font-mono font-bold text-xs tracking-wider uppercase h-10 px-6 rounded-sm transition-all duration-300 flex items-center gap-2"
-                      >
-                        <span>{status === "sending" ? "SENDING..." : "SEND"}</span>
-                        <Send className="w-3.5 h-3.5" />
-                      </Button>
-                    </div>
-                  </form>
-                )}
-              </div>
+                    <Button
+                      type="submit"
+                      disabled={status === "sending"}
+                      className="bg-arena-accent text-arena-bg hover:bg-white font-mono font-bold text-xs tracking-wider uppercase h-10 px-6 rounded-sm transition-all duration-300 flex items-center gap-2"
+                    >
+                      <span>{status === "sending" ? "SENDING..." : "SEND"}</span>
+                      <Send className="w-3.5 h-3.5" />
+                    </Button>
+                  </div>
+                </form>
+              )}
+            </div>
 
           </div>
         </Reveal>

@@ -9,16 +9,12 @@ export function Footer() {
         <div className="max-w-7xl mx-auto">
           {/* Top Footer 4 Columns Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12">
-            
+
             {/* Column 1: Brand & Mission (5 cols) */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-sm bg-arena-surface border border-arena-border flex items-center justify-center font-display text-sm font-bold text-arena-accent">
-                  Z
-                </div>
-                <span className="font-display text-xl font-bold tracking-tight text-arena-fg">
-                  ZENETIC<span className="text-arena-accent">.</span>
-                </span>
+              <div className="flex items-center mb-2">
+                <div className="logo-mask bg-purple-900 hover:bg-purple-700 transition-colors duration-300 h-13 w-20" aria-label="Logo" />
+                <h1 className="font-bold text-1xl">Esports</h1>
               </div>
               <p className="text-xs md:text-sm text-arena-muted max-w-sm leading-relaxed">
                 360° Esports solutions agency focusing to accelerate competitive gaming, live broadcasts, and brand partnerships across South East Asia.
@@ -83,7 +79,7 @@ export function Footer() {
                 </div>
                 <div>
                   <span className="text-arena-accent font-semibold">Email: </span>
-                  <span>contact@zenetic-esports.com</span>
+                  <span>query.rtbesp@gmail.com</span>
                 </div>
                 <div>
                   <span className="text-arena-accent font-semibold">Region: </span>
@@ -97,7 +93,7 @@ export function Footer() {
           {/* Divider */}
           <div className="border-t border-arena-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <span className="font-mono text-xs text-arena-muted">
-              © 2026 ZENETIC ESPORTS • ALL RIGHTS RESERVED
+              © 2026 RTB ESPORTS • ALL RIGHTS RESERVED
             </span>
 
             {/* Social Links Bar */}

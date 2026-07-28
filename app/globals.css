@@ -24,21 +24,21 @@ body {
 }
 
 :root {
-  --arena-bg: #0e0f13;
-  --arena-surface: #141519;
-  --arena-border: #23242b;
-  --arena-accent: #e8ff3c;
-  --arena-muted: #8b8fa3;
-  --arena-fg: #f4f4f2;
+  --arena-bg: #090014;
+  --arena-surface: #14002e;
+  --arena-border: #2a005c;
+  --arena-accent: #c073ff;
+  --arena-muted: #9c80b3;
+  --arena-fg: #f5f0fa;
 }
 
 html.light {
-  --arena-bg: #f7f8fa;
+  --arena-bg: #f8f5fa;
   --arena-surface: #ffffff;
-  --arena-border: #d8dce3;
-  --arena-accent: #8da909;
-  --arena-muted: #596171;
-  --arena-fg: #15171c;
+  --arena-border: #e2d1f0;
+  --arena-accent: #7a00cc;
+  --arena-muted: #73598c;
+  --arena-fg: #1b0033;
 }
 html {
   scroll-behavior: smooth;
@@ -176,4 +176,14 @@ html {
   html {
     @apply font-sans;
   }
+}
+.logo-mask {
+  -webkit-mask-image: url('/logo.png');
+  mask-image: url('/logo.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }

@@ -65,12 +65,12 @@ export async function Events() {
                 {/* Card Content */}
                 <div className="relative z-10 flex flex-col h-full cursor-pointer">
                   {e.banner_image && (
-                    <div className="mb-3 relative w-full h-32 overflow-hidden rounded-sm border border-arena-border group-hover:border-arena-bg/20 transition-colors">
+                    <div className="mb-3 relative w-full aspect-video overflow-hidden rounded-sm border border-arena-border group-hover:border-arena-bg/20 transition-colors">
                       <Image
                         src={urlFor(e.banner_image).url()}
                         alt={e.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="object-contain transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   )}

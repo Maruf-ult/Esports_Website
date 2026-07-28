@@ -63,13 +63,13 @@ export function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className="font-mono text-xs text-arena-accent mb-4 tracking-wider">
-            SINCE 2019 — LIVE ACROSS SEA
+            SINCE 2021 — LIVE ACROSS SEA
           </div>
 
-          <h1 className="mb-5 font-display text-5xl leading-[1.04] sm:text-6xl md:text-7xl">
-            WE RUN THE
+          <h1 className="mb-5 font-display text-3xl leading-[1.04] sm:text-4xl md:text-6xl">
+            EXCELLENCE YOU EXPECT
             <br />
-            <span className="text-arena-accent">ARENA.</span>
+            <span className="text-arena-accent">TRUST YOU KEEP.</span>
           </h1>
 
           <p className="max-w-md text-sm leading-relaxed text-arena-muted md:text-base">

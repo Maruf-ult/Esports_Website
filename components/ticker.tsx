@@ -3,11 +3,11 @@
 import { Reveal } from "@/components/reveal";
 
 const stats = [
-  { value: "93", label: "EVENTS" },
-  { value: "26+", label: "CLIENTS" },
-  { value: "1,274+", label: "HOURS STREAMED" },
-  { value: "76K+", label: "PLAYERS" },
-  { value: "1.71Cr+ BDT", label: "PRIZEPOOL" },
+  { value: "144+", label: "EVENTS" },
+  { value: "80+", label: "CLIENTS" },
+  { value: "400+", label: "HOURS STREAMED" },
+  { value: "75k+", label: "PLAYERS" },
+  { value: "1.1Cr+ BDT", label: "PRIZEPOOL" },
 ];
 
 export function Ticker() {

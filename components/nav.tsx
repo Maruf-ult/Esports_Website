@@ -31,13 +31,13 @@ export function Nav() {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-arena-bg/90 backdrop-blur-sm px-6 md:px-12 py-6 border-b border-arena-border">
+    <nav className="sticky top-0 z-50 bg-arena-bg/90 backdrop-blur-sm px-6 md:px-12 py-2 border-b border-arena-border">
       <div className="flex items-center justify-between">
         <a
           href="#top"
-          className="cursor-pointer font-display text-lg tracking-wide hover:text-arena-accent transition-colors"
+          className="cursor-pointer flex items-center"
         >
-          ZENETIC<span className="text-arena-accent">.</span>
+          <div className="logo-mask bg-purple-900 hover:bg-purple-700 transition-colors duration-300 h-13 w-20 " aria-label="Logo" />
         </a>
 
         {/* Desktop links */}
@@ -48,15 +48,13 @@ export function Nav() {
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className={`group relative cursor-pointer hover:text-arena-fg transition-colors pb-1 ${
-                  isActive ? "text-arena-fg" : ""
-                }`}
+                className={`group relative cursor-pointer hover:text-arena-fg transition-colors pb-1 ${isActive ? "text-arena-fg" : ""
+                  }`}
               >
                 {link.toUpperCase()}
                 <span
-                  className={`absolute left-0 bottom-0 w-full h-[2px] bg-arena-accent transition-transform duration-300 origin-left ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
+                  className={`absolute left-0 bottom-0 w-full h-[2px] bg-arena-accent transition-transform duration-300 origin-left ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`}
                 />
               </a>
             );
@@ -83,15 +81,13 @@ export function Nav() {
                 key={link}
                 href={`#${link.toLowerCase()}`}
                 onClick={() => setOpen(false)}
-                className={`group relative w-fit cursor-pointer hover:text-arena-fg transition-colors pb-1 ${
-                  isActive ? "text-arena-fg" : ""
-                }`}
+                className={`group relative w-fit cursor-pointer hover:text-arena-fg transition-colors pb-1 ${isActive ? "text-arena-fg" : ""
+                  }`}
               >
                 {link.toUpperCase()}
                 <span
-                  className={`absolute left-0 bottom-0 w-full h-[2px] bg-arena-accent transition-transform duration-300 origin-left ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
+                  className={`absolute left-0 bottom-0 w-full h-[2px] bg-arena-accent transition-transform duration-300 origin-left ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`}
                 />
               </a>
             );
