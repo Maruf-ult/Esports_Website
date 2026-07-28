@@ -34,6 +34,8 @@ const fallbackEvents = [
 export async function Events() {
   let sanityEvents: any[] = [];
   try {
+    // Artificial delay to demonstrate the skeleton loading state
+    await new Promise((resolve) => setTimeout(resolve, 2500));
     sanityEvents = await client.fetch(eventsQuery);
   } catch (error) {
     console.error("Failed to fetch events from Sanity:", error);
@@ -143,6 +145,48 @@ export async function Events() {
               </div>
             </Reveal>
           ))}
+      </div>
+    </section>
+  );
+}
+
+export function EventsSkeleton() {
+  return (
+    <section className="scroll-mt-24 px-6 md:px-12 py-16">
+      <div className="text-center mb-12 flex flex-col items-center">
+        <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight flex items-center justify-center gap-2.5">
+          <span className="text-arena-fg relative pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-arena-accent/50">
+            FEATURED
+          </span>
+          <span className="text-arena-accent/50">EVENTS</span>
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-arena-border">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="bg-arena-bg p-5 h-full relative overflow-hidden flex flex-col min-h-[300px]">
+            <div className="flex flex-col h-full animate-pulse">
+              {/* Image Skeleton */}
+              <div className="w-full aspect-video bg-arena-border/30 mb-3 rounded-sm"></div>
+              
+              {/* Tagline Skeleton */}
+              <div className="h-3 w-1/3 bg-arena-border/40 mb-3 rounded-sm"></div>
+              
+              {/* Title Skeleton */}
+              <div className="h-4 w-4/5 bg-arena-border/50 mb-2 rounded-sm"></div>
+              <div className="h-4 w-2/3 bg-arena-border/50 mb-2 rounded-sm"></div>
+              
+              {/* Edition Skeleton */}
+              <div className="h-3 w-1/2 bg-arena-border/30 mb-4 rounded-sm flex-grow"></div>
+              
+              {/* Prize Pool Skeleton */}
+              <div className="border-t border-dashed border-arena-border/50 pt-3 flex justify-between items-center mt-auto">
+                <div className="h-3 w-16 bg-arena-border/40 rounded-sm"></div>
+                <div className="h-4 w-24 bg-arena-border/50 rounded-sm"></div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

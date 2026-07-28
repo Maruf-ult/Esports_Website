@@ -55,18 +55,18 @@ export function Contact() {
         <Reveal delay={0.08}>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-arena-border border border-arena-border">
             <div className="md:col-span-5 bg-arena-bg p-8 md:p-10 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-arena-accent origin-top-left scale-0 group-hover:scale-100 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
+              <div className="absolute inset-0 bg-arena-accent origin-top-left scale-100 md:scale-0 group-hover:scale-100 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
               <div className="relative z-10">
                 <div className="space-y-3">
                   <div className="mb-4 flex items-center">
                     <div className="logo-mask bg-purple-900 hover:bg-purple-700 transition-colors duration-300 h-13 w-20" aria-label="Logo" />
                   </div>
-                  <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-arena-fg leading-[1.05] tracking-tight">
+                  <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-arena-bg md:text-arena-fg leading-[1.05] tracking-tight group-hover:text-arena-bg transition-colors duration-300">
                     LET&apos;S BUILD<br />
-                    <span className="text-arena-accent group-hover:text-arena-bg transition-colors duration-300">SOMETHING</span><br />
-                    <span className="text-arena-accent group-hover:text-arena-bg transition-colors duration-300">LIVE.</span>
+                    <span className="text-arena-bg md:text-arena-accent group-hover:text-arena-bg transition-colors duration-300">SOMETHING</span><br />
+                    <span className="text-arena-bg md:text-arena-accent group-hover:text-arena-bg transition-colors duration-300">LIVE.</span>
                   </h2>
-                  <p className="mt-5 text-sm text-arena-muted leading-relaxed max-w-xs group-hover:text-arena-bg/70 transition-colors duration-300">
+                  <p className="mt-5 text-sm text-arena-bg/70 md:text-arena-muted leading-relaxed max-w-xs group-hover:text-arena-bg/70 transition-colors duration-300">
                     Bring us your next event, campaign, broadcast, or bold idea.
                   </p>
                 </div>

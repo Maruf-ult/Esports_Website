@@ -2,12 +2,13 @@ import { Nav } from "@/components/nav";
 import { Ticker } from "@/components/ticker";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
-import { Events } from "@/components/events";
+import { Events, EventsSkeleton } from "@/components/events";
 import { Clients } from "@/components/clients";
 import { Team } from "@/components/team";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/reveal";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -16,16 +17,12 @@ export default function Home() {
       <Ticker />
       <Hero />
       <Services />
-      <Reveal>
+      <Suspense fallback={<EventsSkeleton />}>
         <Events />
-      </Reveal>
-      <Reveal>
-        <Clients />
-      </Reveal>
+      </Suspense>
+      <Clients />
       <Team />
-      <Reveal>
-        <Contact />
-      </Reveal>
+      <Contact />
       <Footer />
     </main>
   );

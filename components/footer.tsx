@@ -1,5 +1,4 @@
 import { Reveal } from "@/components/reveal";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter, FaDiscord, FaYoutube } from "react-icons/fa";
 
 export function Footer() {
@@ -19,7 +18,6 @@ export function Footer() {
               <p className="text-xs md:text-sm text-arena-muted max-w-sm leading-relaxed">
                 360° Esports solutions agency focusing to accelerate competitive gaming, live broadcasts, and brand partnerships across South East Asia.
               </p>
-              <ThemeToggle />
             </div>
 
             {/* Column 2: Navigation Links (2 cols) */}
@@ -75,7 +73,7 @@ export function Footer() {
               <div className="space-y-2 text-xs font-mono text-arena-muted leading-relaxed">
                 <div>
                   <span className="text-arena-accent font-semibold">Address: </span>
-                  <span>House 77, Rd No 9, Dhaka 1212</span>
+                  <span>House 15, Rd No 23, Uttara sector 10</span>
                 </div>
                 <div>
                   <span className="text-arena-accent font-semibold">Email: </span>
@@ -98,22 +96,22 @@ export function Footer() {
 
             {/* Social Links Bar */}
             <div className="flex items-center gap-4 text-arena-muted">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Instagram">
+              <a href="https://www.instagram.com/rahatthebrand?igsh=aTE4aHYyYWF1czc5" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Instagram">
                 <FaInstagram size={16} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Facebook">
+              <a href="https://www.facebook.com/share/1HoA8nyDYg/" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Facebook">
                 <FaFacebook size={16} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="LinkedIn">
+              {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="LinkedIn">
                 <FaLinkedin size={16} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="YouTube">
+              </a> */}
+              <a href="https://youtube.com/@rahatthebrand" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="YouTube">
                 <FaYoutube size={16} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Twitter">
+              {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Twitter">
                 <FaTwitter size={16} />
-              </a>
-              <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Discord">
+              </a> */}
+              <a href="https://discord.gg/2CZZJGjFB" target="_blank" rel="noopener noreferrer" className="hover:text-arena-accent transition-colors p-1" title="Discord">
                 <FaDiscord size={16} />
               </a>
             </div>

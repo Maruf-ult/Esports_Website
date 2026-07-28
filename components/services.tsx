@@ -43,7 +43,6 @@ export function Services() {
         {services.map((s, i) => (
           <Reveal key={s.tag} delay={i * 0.08}>
             <div className="service-card bg-arena-bg p-8 h-full relative overflow-hidden group cursor-default">
-              {/* Yellow diagonal fill overlay */}
               <div className="absolute inset-0 bg-arena-accent origin-top-left scale-0 group-hover:scale-100 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-0" />
 
               {/* Content */}

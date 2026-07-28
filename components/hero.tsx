@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const images = [
   { id: "valorant", src: "/images/valorant.jpg", alt: "Valorant" },
@@ -91,6 +92,9 @@ export function Hero() {
               }`}
           />
         ))}
+      </div>
+      <div className="absolute top-6 right-6 md:right-12 z-20">
+        <ThemeToggle />
       </div>
     </section>
   );
