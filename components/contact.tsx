@@ -4,8 +4,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Reveal } from "@/components/reveal";
+import { Reveal, RevealContainer, RevealText } from "@/components/reveal";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -38,21 +39,19 @@ export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24 px-6 md:px-12 py-16 flex justify-center">
       <div className="w-full max-w-4xl">
-        <Reveal>
-          <div className="text-center mb-12 flex flex-col items-center">
-            <div className="font-mono text-[10px] text-arena-muted tracking-[0.24em] mb-3">
-              START A CONVERSATION
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight flex items-center justify-center gap-2.5">
-              <span className="text-arena-fg relative pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-arena-accent">
-                GET IN
-              </span>
-              <span className="text-arena-accent">TOUCH</span>
-            </h2>
+        <div className="text-center mb-12 flex flex-col items-center">
+          <div className="font-mono text-[10px] text-arena-muted tracking-[0.24em] mb-3">
+            START A CONVERSATION
           </div>
-        </Reveal>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight flex items-center justify-center gap-2.5">
+            <span className="text-arena-fg relative pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-arena-accent">
+              <RevealText text="GET IN" as="span" />
+            </span>
+            <RevealText text="TOUCH" as="span" className="text-arena-accent" />
+          </h2>
+        </div>
 
-        <Reveal delay={0.08}>
+        <Reveal type="scale-in">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-arena-border border border-arena-border">
             <div className="md:col-span-5 bg-arena-bg p-8 md:p-10 relative overflow-hidden group">
               <div className="absolute inset-0 bg-arena-accent origin-top-left scale-100 md:scale-0 group-hover:scale-100 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
@@ -83,63 +82,77 @@ export function Contact() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
-                      Name
-                    </label>
-                    <Input
-                      name="name"
-                      placeholder="Your Name"
-                      required
-                      className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
-                      Email Address
-                    </label>
-                    <Input
-                      name="email"
-                      type="email"
-                      placeholder="Email Address"
-                      required
-                      className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
-                      Message
-                    </label>
-                    <Textarea
-                      name="message"
-                      placeholder="Enter your message"
-                      required
-                      rows={4}
-                      className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm text-xs p-3.5 resize-none"
-                    />
-                  </div>
-
-                  {/* Bottom Right Send Button matching screenshot position */}
-                  <div className="flex items-center justify-between pt-1">
-                    {status === "error" ? (
-                      <div className="flex items-center gap-1.5 font-mono text-xs text-red-400">
-                        <AlertCircle className="w-4 h-4" />
-                        <span>SOMETHING WENT WRONG.</span>
+                <form onSubmit={handleSubmit}>
+                  <RevealContainer staggerDelay={0.08} className="space-y-4">
+                    <Reveal type="fade-up">
+                      <div>
+                        <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                          Name
+                        </label>
+                        <Input
+                          name="name"
+                          placeholder="Your Name"
+                          required
+                          className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
+                        />
                       </div>
-                    ) : <div />}
+                    </Reveal>
 
-                    <Button
-                      type="submit"
-                      disabled={status === "sending"}
-                      className="bg-arena-accent text-arena-bg hover:bg-white font-mono font-bold text-xs tracking-wider uppercase h-10 px-6 rounded-sm transition-all duration-300 flex items-center gap-2"
-                    >
-                      <span>{status === "sending" ? "SENDING..." : "SEND"}</span>
-                      <Send className="w-3.5 h-3.5" />
-                    </Button>
-                  </div>
+                    <Reveal type="fade-up">
+                      <div>
+                        <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                          Email Address
+                        </label>
+                        <Input
+                          name="email"
+                          type="email"
+                          placeholder="Email Address"
+                          required
+                          className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm h-11 text-xs px-4"
+                        />
+                      </div>
+                    </Reveal>
+
+                    <Reveal type="fade-up">
+                      <div>
+                        <label className="block font-mono text-xs text-arena-muted uppercase tracking-wider mb-1.5">
+                          Message
+                        </label>
+                        <Textarea
+                          name="message"
+                          placeholder="Enter your message"
+                          required
+                          rows={4}
+                          className="bg-arena-bg border-arena-border text-arena-fg placeholder:text-arena-muted/50 focus:border-arena-accent rounded-sm text-xs p-3.5 resize-none"
+                        />
+                      </div>
+                    </Reveal>
+
+                    {/* Bottom Right Send Button matching screenshot position */}
+                    <Reveal type="fade-up" className="flex items-center justify-between pt-1">
+                      {status === "error" ? (
+                        <div className="flex items-center gap-1.5 font-mono text-xs text-red-400">
+                          <AlertCircle className="w-4 h-4" />
+                          <span>SOMETHING WENT WRONG.</span>
+                        </div>
+                      ) : <div />}
+
+                      <Button
+                        type="submit"
+                        disabled={status === "sending"}
+                        className="group bg-arena-accent text-arena-bg hover:bg-white font-mono font-bold text-xs tracking-wider uppercase h-10 px-6 rounded-sm transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                      >
+                        <span>{status === "sending" ? "SENDING..." : "SEND"}</span>
+                        <motion.span
+                          className="inline-block"
+                          whileHover={{ x: 5, y: -5, scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 350, damping: 10 }}
+                        >
+                          <Send className="w-3.5 h-3.5 transition-transform duration-300" />
+                        </motion.span>
+                      </Button>
+                    </Reveal>
+                  </RevealContainer>
                 </form>
               )}
             </div>

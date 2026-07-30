@@ -33,6 +33,9 @@ export function Footer() {
                   <a href="#services" className="hover:text-arena-accent transition-colors">Services</a>
                 </li>
                 <li>
+                  <a href="#gallery" className="hover:text-arena-accent transition-colors">Event Gallery</a>
+                </li>
+                <li>
                   <a href="#events" className="hover:text-arena-accent transition-colors">Featured Events</a>
                 </li>
                 <li>

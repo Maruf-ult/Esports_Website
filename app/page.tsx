@@ -5,6 +5,7 @@ import { Services } from "@/components/services";
 import { Events, EventsSkeleton } from "@/components/events";
 import { Clients } from "@/components/clients";
 import { Team } from "@/components/team";
+import { Gallery } from "@/components/gallery";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/reveal";
@@ -17,6 +18,7 @@ export default function Home() {
       <Ticker />
       <Hero />
       <Services />
+      <Gallery />
       <Suspense fallback={<EventsSkeleton />}>
         <Events />
       </Suspense>

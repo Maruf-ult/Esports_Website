@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { RevealText } from "@/components/reveal";
 
 const images = [
   { id: "valorant", src: "/images/valorant.jpg", alt: "Valorant" },
@@ -58,26 +59,70 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl hero-text">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="font-mono text-xs text-arena-accent mb-4 tracking-wider">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-mono text-xs text-arena-accent mb-4 tracking-wider"
+          >
             SINCE 2021 — LIVE ACROSS SEA
-          </div>
+          </motion.div>
 
-          <h1 className="mb-5 font-display text-3xl leading-[1.04] sm:text-4xl md:text-6xl">
-            EXCELLENCE YOU EXPECT
-            <br />
-            <span className="text-arena-accent">TRUST YOU KEEP.</span>
-          </h1>
+          <RevealText
+            text="EXCELLENCE YOU EXPECT"
+            as="h1"
+            delay={0.2}
+            className="font-display text-3xl leading-[1.04] sm:text-4xl md:text-6xl font-extrabold uppercase tracking-tight block"
+          />
+          <RevealText
+            text="TRUST YOU KEEP."
+            as="h1"
+            delay={0.4}
+            className="mb-5 font-display text-3xl leading-[1.04] sm:text-4xl md:text-6xl font-extrabold uppercase tracking-tight text-arena-accent block"
+          />
 
-          <p className="max-w-md text-sm leading-relaxed text-arena-muted md:text-base">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="max-w-md text-sm leading-relaxed text-arena-muted md:text-base"
+          >
             Esports events, brand partnerships, broadcasting, and content —
             built for Bangladesh&apos;s gaming industry and beyond.
-          </p>
-        </motion.div>
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-8 flex flex-wrap gap-4"
+          >
+            <a
+              href="#events"
+              className="group relative px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-arena-bg bg-arena-accent overflow-hidden transition-transform active:scale-95 shadow-[0_0_20px_rgba(192,115,255,0.3)] hover:shadow-[0_0_30px_rgba(192,115,255,0.5)] cursor-pointer"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Discover Events
+                <motion.span
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+                >
+                  →
+                </motion.span>
+              </span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+            </a>
+
+            <a
+              href="#contact"
+              className="group relative px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-arena-fg border border-arena-border hover:border-arena-accent/50 transition-colors active:scale-95 cursor-pointer bg-arena-surface/40 hover:bg-arena-surface/80"
+            >
+              Get In Touch
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-arena-accent group-hover:w-full transition-all duration-300" />
+            </a>
+          </motion.div>
+        </div>
       </div>
 
       {/* Slide indicators */}
