@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const links = ["Services", "Gallery", "Events", "Clients", "Team", "Contact"];
+const links = ["Services", "Events", "Clients", "Team", "Contact"];
 
 export function Nav() {
   const [open, setOpen] = useState(false);

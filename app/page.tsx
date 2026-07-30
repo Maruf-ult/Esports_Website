@@ -18,12 +18,12 @@ export default function Home() {
       <Ticker />
       <Hero />
       <Services />
-      <Gallery />
       <Suspense fallback={<EventsSkeleton />}>
         <Events />
       </Suspense>
       <Clients />
       <Team />
+      <Gallery />
       <Contact />
       <Footer />
     </main>

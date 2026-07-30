@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/reveal";
 import { client } from "@/sanity/lib/client";
 import { galleryImagesQuery } from "@/sanity/lib/queries";
-import { GalleryGrid } from "./gallery-grid";
+import { GalleryCarousel } from "./gallery-carousel";
 
 export async function Gallery() {
   let sanityImages: any[] = [];
@@ -20,15 +20,16 @@ export async function Gallery() {
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight flex items-center justify-center gap-2.5">
             <span className="text-arena-fg relative pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-arena-accent">
-              Event
+              EVENT
             </span>
-            <span className="text-arena-accent">Showcase</span>
+            <span className="text-arena-accent">SHOWCASE</span>
           </h2>
         </div>
       </Reveal>
 
-      {/* Render the interactive gallery grid */}
-      <GalleryGrid images={sanityImages} />
+      <Reveal>
+        <GalleryCarousel images={sanityImages} />
+      </Reveal>
     </section>
   );
 }
