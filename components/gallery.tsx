@@ -20,9 +20,9 @@ export async function Gallery() {
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight flex items-center justify-center gap-2.5">
             <span className="text-arena-fg relative pb-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-arena-accent">
-              A GLIMPSE OF
+              Event
             </span>
-            <span className="text-arena-accent">OUR EVENTS</span>
+            <span className="text-arena-accent">Showcase</span>
           </h2>
         </div>
       </Reveal>
