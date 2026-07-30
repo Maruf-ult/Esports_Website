@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const links = ["Services", "Events", "Clients", "Team", "Contact"];
+const links = ["Services", "Events", "Clients", "Team", "Gallery", "Contact"];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -37,7 +37,7 @@ export function Nav() {
           href="#top"
           className="cursor-pointer flex items-center"
         >
-          <div className="logo-mask bg-purple-900 hover:bg-purple-700 transition-colors duration-300 h-13 w-20 " aria-label="Logo" />
+          <div className="logo-mask h-13 w-20" aria-label="Logo" />
         </a>
 
         {/* Desktop links */}

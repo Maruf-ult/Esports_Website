@@ -34,12 +34,8 @@ export const teamMembersQuery = defineQuery(
 )
 
 export const galleryImagesQuery = defineQuery(
-  `*[_type == "galleryImage"] | order(date desc, _createdAt desc) {
+  `*[_type == "galleryImage"] | order(_createdAt desc) {
     _id,
-    title,
-    description,
-    image,
-    category,
-    date
+    image
   }`
 )

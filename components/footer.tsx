@@ -12,7 +12,7 @@ export function Footer() {
             {/* Column 1: Brand & Mission (5 cols) */}
             <div className="lg:col-span-5 space-y-4">
               <div className="flex items-center mb-2">
-                <div className="logo-mask bg-purple-900 hover:bg-purple-700 transition-colors duration-300 h-13 w-20" aria-label="Logo" />
+                <div className="logo-mask h-13 w-20" aria-label="Logo" />
                 <h1 className="font-bold text-1xl">Esports</h1>
               </div>
               <p className="text-xs md:text-sm text-arena-muted max-w-sm leading-relaxed">

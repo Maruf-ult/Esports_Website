@@ -58,7 +58,7 @@ export function Contact() {
               <div className="relative z-10">
                 <div className="space-y-3">
                   <div className="mb-4 flex items-center">
-                    <div className="logo-mask bg-purple-900 hover:bg-purple-700 transition-colors duration-300 h-13 w-20" aria-label="Logo" />
+                    <div className="logo-mask h-13 w-20" aria-label="Logo" />
                   </div>
                   <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-arena-bg md:text-arena-fg leading-[1.05] tracking-tight group-hover:text-arena-bg transition-colors duration-300">
                     LET&apos;S BUILD<br />

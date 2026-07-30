@@ -1,7 +1,8 @@
 import { Reveal } from "@/components/reveal";
 import { client } from "@/sanity/lib/client";
 import { galleryImagesQuery } from "@/sanity/lib/queries";
-import { GalleryCarousel } from "./gallery-carousel";
+import { GalleryTicker } from "./gallery-ticker";
+
 
 export async function Gallery() {
   let sanityImages: any[] = [];
@@ -12,9 +13,9 @@ export async function Gallery() {
   }
 
   return (
-    <section id="gallery" className="scroll-mt-24 px-6 md:px-12 py-16 bg-arena-bg">
+    <section id="gallery" className="scroll-mt-24 py-16 bg-arena-bg overflow-hidden">
       <Reveal>
-        <div className="text-center mb-12 flex flex-col items-center">
+        <div className="text-center mb-12 flex flex-col items-center px-6 md:px-12">
           <div className="font-mono text-[10px] text-arena-muted tracking-[0.24em] mb-3">
             PHOTO REEL
           </div>
@@ -27,9 +28,7 @@ export async function Gallery() {
         </div>
       </Reveal>
 
-      <Reveal>
-        <GalleryCarousel images={sanityImages} />
-      </Reveal>
+      <GalleryTicker images={sanityImages} />
     </section>
   );
 }
