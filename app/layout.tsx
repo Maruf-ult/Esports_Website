@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zenetic Esports",
+  title: "RTD Esports",
   description: "Esports event management & marketing",
 };
 
