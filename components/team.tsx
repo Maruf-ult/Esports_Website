@@ -5,12 +5,12 @@ import { client } from "@/sanity/lib/client";
 import { teamMembersQuery } from "@/sanity/lib/queries";
 
 const fallbackTeam: TeamMember[] = [
-  { name: "AR Rahman Sohan", role: "Founder & CEO", instagram: "https://www.instagram.com/ar_rahman_sohan", linkedin: "https://www.linkedin.com/in/AR-RAHMAN-SOHAN/", discord: "https://discord.com/users/486666134725066752", whatsapp: "https://wa.me/8801670229737" },
-  { name: "Md Rashid Uz Zaman", role: "Founder & COO", instagram: "https://instagram.com/ig_puffedrice", linkedin: "https://www.linkedin.com/in/md-rashid-uz-zaman", discord: "https://discordapp.com/users/440500176017424384", whatsapp: "https://wa.me/8801996806227" },
-  { name: "Rafsan Islam", role: "Head of Operations", instagram: "https://instagram.com/_rosh.malai_", linkedin: "https://www.linkedin.com/in/rafsan-islam-38825a204", discord: "https://discord.com/users/222766364945809408", whatsapp: "https://wa.me/8801715948527" },
-  { name: "Farhan Ashhab Nur", role: "Head of Design", instagram: "https://instagram.com/darkidop", linkedin: "https://www.linkedin.com/in/farhannur/", discord: "https://discord.com/users/522340125380706314", whatsapp: "https://wa.me/8801868313256" },
-  { name: "Ayaan Shams Siddiquee", role: "Head of PR and Contents", instagram: "https://www.instagram.com/ayaan.juarez/", discord: "https://discord.com/users/527487377061576705" },
-  { name: "Hafiz Istuq Zeshan", role: "Chief HR Officer", instagram: "https://www.instagram.com/hafizistuq.zeshan/", linkedin: "https://www.linkedin.com/in/hafiz-istuq-zeshan-171188190", discord: "https://discord.com/users/484028302378663937" },
+  { name: "Afk", role: "Founder & CEO", instagram: "https://www.instagram.com/ar_rahman_sohan", linkedin: "https://www.linkedin.com/in/AR-RAHMAN-SOHAN/", discord: "https://discord.com/users/486666134725066752", whatsapp: "https://wa.me/8801670229737" },
+  { name: "afk", role: "Founder & COO", instagram: "https://instagram.com/ig_puffedrice", linkedin: "https://www.linkedin.com/in/md-rashid-uz-zaman", discord: "https://discordapp.com/users/440500176017424384", whatsapp: "https://wa.me/8801996806227" },
+  { name: "afk", role: "Head of Operations", instagram: "https://instagram.com/_rosh.malai_", linkedin: "https://www.linkedin.com/in/rafsan-islam-38825a204", discord: "https://discord.com/users/222766364945809408", whatsapp: "https://wa.me/8801715948527" },
+  { name: "afk", role: "Head of Design", instagram: "https://instagram.com/darkidop", linkedin: "https://www.linkedin.com/in/farhannur/", discord: "https://discord.com/users/522340125380706314", whatsapp: "https://wa.me/8801868313256" },
+  { name: "afk", role: "Head of PR and Contents", instagram: "https://www.instagram.com/ayaan.juarez/", discord: "https://discord.com/users/527487377061576705" },
+  { name: "afk", role: "Chief HR Officer", instagram: "https://www.instagram.com/hafizistuq.zeshan/", linkedin: "https://www.linkedin.com/in/hafiz-istuq-zeshan-171188190", discord: "https://discord.com/users/484028302378663937" },
 ];
 
 interface SanityMember {
@@ -30,11 +30,11 @@ export async function Team() {
 
   const displayTeam: TeamMember[] = sanityMembers.length
     ? sanityMembers.map((member) => ({
-        name: member.name || "Team Member",
-        role: member.designation || "Team Member",
-        ...member.socials,
-        photoUrl: member.photo ? urlFor(member.photo).url() : undefined,
-      }))
+      name: member.name || "Team Member",
+      role: member.designation || "Team Member",
+      ...member.socials,
+      photoUrl: member.photo ? urlFor(member.photo).url() : undefined,
+    }))
     : fallbackTeam;
 
   return (

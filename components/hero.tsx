@@ -47,6 +47,7 @@ export function Hero() {
               fill
               priority
               quality={85}
+              sizes="100vw"
               className="object-cover object-center lg:object-[center_20%] hero-img-brightness"
             />
           </motion.div>

@@ -256,6 +256,7 @@ export function GalleryGrid({ images }: GalleryGridProps) {
                     }
                     alt={filteredImages[lightboxIndex].title}
                     fill
+                    sizes="(min-width: 1024px) 1000px, 90vw"
                     className="object-contain"
                     priority
                   />

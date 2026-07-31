@@ -11,6 +11,8 @@ import { Footer } from "@/components/footer";
 import { Reveal } from "@/components/reveal";
 import { Suspense } from "react";
 
+export const revalidate = 0;
+
 export default function Home() {
   return (
     <main id="top">

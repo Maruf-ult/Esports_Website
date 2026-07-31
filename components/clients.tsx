@@ -58,6 +58,7 @@ export async function Clients() {
                         src={urlFor(c.logo).url()}
                         alt={c.name || "Client logo"}
                         fill
+                        sizes="96px"
                         className="object-contain"
                       />
                     </div>

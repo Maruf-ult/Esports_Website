@@ -193,6 +193,7 @@ export function GalleryTicker({ images }: { images: GalleryTickerItem[] }) {
                     src={getFullImageSrc(uniqueImages[lightboxIndex])}
                     alt={`Event photo ${lightboxIndex + 1}`}
                     fill
+                    sizes="(min-width: 1024px) 1000px, 90vw"
                     className="object-contain"
                     priority
                   />

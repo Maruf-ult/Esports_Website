@@ -256,6 +256,7 @@ export function GalleryCarousel({ images }: { images: GalleryItem[] }) {
                     src={activeImageSrc}
                     alt={activeImage.title}
                     fill
+                    sizes="(min-width: 1024px) 1000px, 90vw"
                     className="object-contain"
                     priority
                   />
