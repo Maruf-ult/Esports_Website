@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   description: "RTB Network is a community-driven organization specializing in event management, esports tournaments, content creation, brand collaborations, and creative marketing.",
   icons: {
     icon: "/tab.png",
-    shortcut: "/logo_icon.png",
-    apple: "/logo_icon.png",
+    shortcut: "/tab.png",
+    apple: "/tab.png",
   },
 };
 
