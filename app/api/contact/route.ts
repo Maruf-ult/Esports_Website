@@ -15,8 +15,8 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-     from: 'onboarding@resend.dev',
-     to: 'marufhossain123098@gmail.com',
+      from: 'contact@://rtbnetworkbd.com',
+      to: 'query.rtbesp@gmail.com',
       replyTo: email,
       subject: `New message from ${name}`,
       text: `From: ${name} (${email})\n\n${message}`,
