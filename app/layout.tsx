@@ -19,8 +19,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RTB Esports",
-  description: "Esports event management & marketing",
+  title: "RTB Network",
+  description: "RTB Network is a community-driven organization specializing in event management, esports tournaments, content creation, brand collaborations, and creative marketing.",
+  icons: {
+    icon: "/tab.png",
+    shortcut: "/logo_icon.png",
+    apple: "/logo_icon.png",
+  },
 };
 
 export default function RootLayout({

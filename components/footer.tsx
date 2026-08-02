@@ -11,12 +11,13 @@ export function Footer() {
 
             {/* Column 1: Brand & Mission (5 cols) */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="flex items-center mb-2">
-                <div className="logo-mask h-13 w-20" aria-label="Logo" />
-                <h1 className="font-bold text-1xl">Esports</h1>
+              <div className="flex items-center mb-2 gap-3">
+                <img src="/rtb-logo.png" alt="RTB Logo" className="h-10 w-20 object-cover logo-deep-blue" />
+
+                <h1 className="font-bold text-1xl">Network</h1>
               </div>
               <p className="text-xs md:text-sm text-arena-muted max-w-sm leading-relaxed">
-                360° Esports solutions agency focusing to accelerate competitive gaming, live broadcasts, and brand partnerships across South East Asia.
+                360° Network solutions agency focusing to accelerate competitive gaming, live broadcasts, and brand partnerships across South East Asia.
               </p>
             </div>
 
@@ -94,7 +95,7 @@ export function Footer() {
           {/* Divider */}
           <div className="border-t border-arena-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <span className="font-mono text-xs text-arena-muted">
-              © 2026 RTB ESPORTS • ALL RIGHTS RESERVED
+              © 2026 RTB NETWORK • ALL RIGHTS RESERVED
             </span>
 
             {/* Social Links Bar */}

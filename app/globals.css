@@ -40,13 +40,19 @@ html.light {
   --arena-muted: #73598c;
   --arena-fg: #1b0033;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-ticker {
@@ -170,16 +176,19 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
 }
+
 .logo-mask {
-  -webkit-mask-image: url('/logo.png');
-  mask-image: url('/logo.png');
+  -webkit-mask-image: url('/rtb-logo.png');
+  mask-image: url('/rtb-logo.png');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -247,4 +256,15 @@ html.light .hero-text .bg-arena-accent {
 
 html.light .hero-text .bg-arena-muted\/40 {
   background-color: rgba(191, 168, 212, 0.4);
+}
+
+.logo-deep-blue {
+  /* Converts black/dark logo elements into Tailwind's blue-700 (#1e40af) */
+  filter: invert(18%) sepia(88%) saturate(2250%) hue-rotate(218deg) brightness(91%) contrast(92%);
+  transition: filter 300ms ease;
+}
+
+.logo-deep-blue:hover {
+  /* Converts elements into a lighter hover blue (#3b82f6) */
+  filter: invert(47%) sepia(87%) saturate(1518%) hue-rotate(200deg) brightness(101%) contrast(95%);
 }

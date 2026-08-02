@@ -37,7 +37,8 @@ export function Nav() {
           href="#top"
           className="cursor-pointer flex items-center"
         >
-          <div className="logo-mask h-13 w-20" aria-label="Logo" />
+          <img src="/rtb-logo.png" alt="RTB Logo" className="h-10 w-20 object-cover logo-deep-blue" />
+
         </a>
 
         {/* Desktop links */}
