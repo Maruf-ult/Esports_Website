@@ -57,7 +57,7 @@ export async function Team() {
         <TeamCarousel
           members={displayTeam}
           initialIndex={featuredIndex >= 0 ? featuredIndex : 0}
-          featuredDurationMs={10000}
+          featuredDurationMs={15000}
         />
       </Reveal>
     </section>

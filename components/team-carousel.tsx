@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FaDiscord, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 export interface TeamMember {
@@ -27,7 +28,9 @@ function getOffset(index: number, activeIndex: number, length: number) {
   return offset;
 }
 
-export function TeamCarousel({ members, initialIndex = 0, featuredDurationMs = 3500 }: { members: TeamMember[]; initialIndex?: number; featuredDurationMs?: number }) {
+export function TeamCarousel({ members, initialIndex = 0, featuredDurationMs = 15000 }: { members: TeamMember[]; initialIndex?: number; featuredDurationMs?: number }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.2 });
   const [activeIndex, setActiveIndex] = useState(initialIndex);
   const [isPaused, setIsPaused] = useState(false);
   const move = useCallback(
@@ -36,18 +39,19 @@ export function TeamCarousel({ members, initialIndex = 0, featuredDurationMs = 3
   );
 
   useEffect(() => {
-    if (isPaused || members.length < 2) return;
+    if (!isInView || isPaused || members.length < 2) return;
 
-    // Featured card stays visible longer every time it appears
+    // Featured card stays visible longer every time it appears, starting when scrolled into view
     const delay = activeIndex === initialIndex ? featuredDurationMs : 3500;
     const timer = window.setTimeout(() => move(1), delay);
     return () => window.clearTimeout(timer);
-  }, [isPaused, members.length, move, activeIndex, initialIndex, featuredDurationMs]);
+  }, [isInView, isPaused, members.length, move, activeIndex, initialIndex, featuredDurationMs]);
 
   if (!members.length) return null;
 
   return (
     <motion.div
+      ref={containerRef}
       className="relative h-[360px] overflow-hidden cursor-grab touch-pan-y select-none sm:h-[410px] active:cursor-grabbing"
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
