@@ -29,9 +29,10 @@ export function Hero() {
   const current = images[currentIndex];
 
   return (
+    <>
     <section className="relative flex h-[75vh] items-center overflow-hidden px-6 md:h-[80vh] md:px-12">
       {/* Background Image Slideshow */}
-      <div className="absolute inset-0 z-0 bg-arena-bg">
+      <div className="absolute inset-0 z-0 bg-arena-bg hero-base-bg">
         <AnimatePresence mode="wait">
           <motion.div
             key={current.id}
@@ -143,5 +144,8 @@ export function Hero() {
         <ThemeToggle />
       </div>
     </section>
+      {/* Bridge gradient: smoothly transitions from the dark hero to the page background in light mode */}
+      <div className="hero-bridge h-16 md:h-24 -mt-1" />
+    </>
   );
 }

@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   publisher: "RTB Network",
 
   icons: {
-    icon: "/web_logo.png",
-    shortcut: "/web_logo.png",
-    apple: "/web_logo.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 
   openGraph: {

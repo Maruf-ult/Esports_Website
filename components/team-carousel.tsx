@@ -27,8 +27,8 @@ function getOffset(index: number, activeIndex: number, length: number) {
   return offset;
 }
 
-export function TeamCarousel({ members }: { members: TeamMember[] }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+export function TeamCarousel({ members, initialIndex = 0, featuredDurationMs = 3500 }: { members: TeamMember[]; initialIndex?: number; featuredDurationMs?: number }) {
+  const [activeIndex, setActiveIndex] = useState(initialIndex);
   const [isPaused, setIsPaused] = useState(false);
   const move = useCallback(
     (direction: number) => setActiveIndex((current) => (current + direction + members.length) % members.length),
@@ -37,9 +37,12 @@ export function TeamCarousel({ members }: { members: TeamMember[] }) {
 
   useEffect(() => {
     if (isPaused || members.length < 2) return;
-    const timer = window.setInterval(() => move(1), 3500);
-    return () => window.clearInterval(timer);
-  }, [isPaused, members.length, move]);
+
+    // Featured card stays visible longer every time it appears
+    const delay = activeIndex === initialIndex ? featuredDurationMs : 3500;
+    const timer = window.setTimeout(() => move(1), delay);
+    return () => window.clearTimeout(timer);
+  }, [isPaused, members.length, move, activeIndex, initialIndex, featuredDurationMs]);
 
   if (!members.length) return null;
 

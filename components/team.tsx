@@ -37,6 +37,11 @@ export async function Team() {
     }))
     : fallbackTeam;
 
+  // Find the Executive Director so the carousel starts on that card
+  const featuredIndex = displayTeam.findIndex(
+    (m) => m.role.toLowerCase().includes("executive director"),
+  );
+
   return (
     <section id="team" className="scroll-mt-24 px-6 py-16 md:px-12">
       <Reveal>
@@ -49,7 +54,11 @@ export async function Team() {
         </div>
       </Reveal>
       <Reveal>
-        <TeamCarousel members={displayTeam} />
+        <TeamCarousel
+          members={displayTeam}
+          initialIndex={featuredIndex >= 0 ? featuredIndex : 0}
+          featuredDurationMs={10000}
+        />
       </Reveal>
     </section>
   );

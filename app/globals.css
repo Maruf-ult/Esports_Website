@@ -224,17 +224,31 @@ html.light .logo-mask:hover {
   background: linear-gradient(to right, color-mix(in srgb, var(--arena-bg) 70%, transparent), color-mix(in srgb, var(--arena-bg) 30%, transparent), transparent);
 }
 
-/* Hero overlays — light mode: use dark tints so the image stays vivid */
+/* Hero overlays — light mode: keep the hero cinematic with dark tints */
 html.light .hero-img-brightness {
-  filter: brightness(0.65);
+  filter: brightness(0.5);
+}
+
+/* Force the hero base bg to stay dark even in light mode so image transitions don't flash white */
+html.light .hero-base-bg {
+  background-color: #0a0014;
 }
 
 html.light .hero-overlay-bottom {
-  background: linear-gradient(to top, var(--arena-bg), rgba(0, 0, 0, 0.15), transparent);
+  background: linear-gradient(to top, #090014, rgba(0, 0, 0, 0.25), transparent);
 }
 
 html.light .hero-overlay-left {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15), transparent);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2), transparent);
+}
+
+/* Bridge gradient from the dark hero bottom into the light page bg */
+.hero-bridge {
+  background: transparent;
+}
+
+html.light .hero-bridge {
+  background: linear-gradient(to bottom, #090014 0%, #1a0a2e 25%, #2d1545 50%, var(--arena-bg) 100%);
 }
 
 /* Hero text — force light colors in light mode since it's over a dark photo */
@@ -256,6 +270,27 @@ html.light .hero-text .bg-arena-accent {
 
 html.light .hero-text .bg-arena-muted\/40 {
   background-color: rgba(191, 168, 212, 0.4);
+}
+
+/* Hero buttons — keep dark-theme styling in light mode */
+html.light .hero-text .text-arena-fg {
+  color: #f5f0fa;
+}
+
+html.light .hero-text .border-arena-border {
+  border-color: #2a005c;
+}
+
+html.light .hero-text .bg-arena-surface\/40 {
+  background-color: rgba(20, 0, 46, 0.4);
+}
+
+html.light .hero-text .hover\:bg-arena-surface\/80:hover {
+  background-color: rgba(20, 0, 46, 0.8);
+}
+
+html.light .hero-text .text-arena-bg {
+  color: #090014;
 }
 
 .logo-deep-blue {
